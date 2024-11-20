@@ -1,23 +1,12 @@
-import Accordion, { AccordionProvider } from "@/components/Accordion";
 import AverageWaitSection from "@/components/AverageWaitSection";
 import HeroSection from "@/components/HeroSection";
 import LinkSection from "@/components/LinkSection";
-import QuoteCarousel from "@/components/QuoteCarousel";
 import QuoteSection from "@/components/QuoteSection";
 import ServicesSection from "@/components/ServicesSection";
-import StateView from "@/components/StateView";
-import data from "@/data/medexpress.json";
 import Image from "next/image";
 
 export default function Home() {
-  const quotes = [
-    "The only limit to our realization of tomorrow is our doubts of today.",
-    "Success is not final; failure is not fatal: It is the courage to continue that counts.",
-    "Do not wait to strike till the iron is hot; but make it hot by striking.",
-    "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
-  ];
 
-  const stateData = data.response.results;
   return (
     <>
       <HeroSection />
