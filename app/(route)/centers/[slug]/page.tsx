@@ -3,6 +3,7 @@ import MapComponent from "@/components/Map";
 import React, { useEffect, useState } from "react";
 import data from "@/data/medexpress.json";
 import NotFound from "@/app/not-found";
+import CenterDetailsSection from "@/components/CenterDetailsSection";
 
 interface CenterViewProps {
   params: Promise<{ slug: string }>;
@@ -13,6 +14,7 @@ const CenterView: React.FC<CenterViewProps> = ({ params }) => {
     latitude: number;
     longitude: number;
   } | null>(null);
+  const [centerDetails, setCenterDetails] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [slug, setSlug] = useState<string | null>(null);
 
@@ -42,6 +44,8 @@ const CenterView: React.FC<CenterViewProps> = ({ params }) => {
       return;
     }
 
+    setCenterDetails(matchingData[0].data);
+
     const latitude = matchingData[0].data.geocodedCoordinate?.latitude;
     const longitude = matchingData[0].data.geocodedCoordinate?.longitude;
 
@@ -63,9 +67,9 @@ const CenterView: React.FC<CenterViewProps> = ({ params }) => {
         <MapComponent
           latitude={coordinates.latitude}
           longitude={coordinates.longitude}
-          className="md:block hidden"
+          className="md:block hidden z-1"
         />
-        <h1 className="text-denim">walk in or schedule online</h1>
+        <CenterDetailsSection centerDetails={centerDetails} />
       </>
     );
   }

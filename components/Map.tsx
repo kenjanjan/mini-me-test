@@ -1,4 +1,3 @@
-"use client";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { cn } from "@/utils/utils";
@@ -12,15 +11,13 @@ const MapComponent = ({
   longitude: number;
   className?: string;
 }) => {
-
-
   return (
     <MapContainer
       key={`${latitude}-${longitude}`}
       center={[latitude, longitude]}
       zoom={13}
       style={{ height: "400px", width: "100%" }}
-      className={cn(className)}
+      className={cn(className, "z-0 relative")}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
