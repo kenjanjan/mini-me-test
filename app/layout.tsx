@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const lato = localFont({
+  src: [
+    { path: "./fonts/Lato-Thin.ttf", weight: "100", style: "normal" },
+    { path: "./fonts/Lato-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/Lato-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/Lato-Italic.ttf", weight: "400", style: "italic" },
+    { path: "./fonts/Lato-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/Lato-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/Lato-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/Lato-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "./fonts/Lato-Black.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-lato", 
 });
 
 export const metadata: Metadata = {
@@ -26,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lato.variable} antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
