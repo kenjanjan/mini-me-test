@@ -1,9 +1,27 @@
-import React from 'react'
+import AverageWaitSection from "@/components/AverageWaitSection";
+import FindACenterSection from "@/components/FindACenterSection";
+import HeroSection from "@/components/HeroSection";
+import QuoteSection from "@/components/QuoteSection";
+import ServicesSection from "@/components/ServicesSection";
+import Image from "next/image";
 
-const page = () => {
+const FindACenter = () => {
   return (
-    <div>page</div>
-  )
-}
+    <>
+      <HeroSection message="find a center" image="medex-image" variant="hidden"/>
+      <FindACenterSection />
+      <ServicesSection />
+      <AverageWaitSection />
+      <QuoteSection />
+      <Image
+        src="/assets/images/medex-image.png"
+        width={1440}
+        height={480}
+        alt="medex-image"
+        className="w-full"
+      />
+    </>
+  );
+};
 
-export default page
+export default FindACenter;

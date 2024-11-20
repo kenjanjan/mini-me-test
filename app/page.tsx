@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection message="walk in or schedule online" image="homepage-hero-1"/>
       <LinkSection />
       <ServicesSection />
       <AverageWaitSection />

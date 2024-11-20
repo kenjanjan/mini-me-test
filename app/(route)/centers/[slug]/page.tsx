@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import data from "@/data/medexpress.json";
 import NotFound from "@/app/not-found";
 
-interface StateViewProps {
+interface CenterViewProps {
   params: Promise<{ slug: string }>;
 }
 
-const StateView: React.FC<StateViewProps> = ({ params }) => {
+const CenterView: React.FC<CenterViewProps> = ({ params }) => {
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
@@ -73,4 +73,4 @@ const StateView: React.FC<StateViewProps> = ({ params }) => {
   return <div>Loading...</div>;
 };
 
-export default StateView;
+export default CenterView;
