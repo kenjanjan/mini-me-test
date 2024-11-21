@@ -1,6 +1,6 @@
 "use client";
 import MapComponent from "@/components/Map";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import data from "@/data/medexpress.json";
 import NotFound from "@/app/not-found";
 import CenterDetailsSection from "@/components/CenterDetailsSection";
@@ -68,11 +68,17 @@ const CenterBody = ({ params }: CenterBodyProps) => {
   if (coordinates) {
     return (
       <>
-        <MapComponent
-          latitude={coordinates.latitude}
-          longitude={coordinates.longitude}
-          className="md:block hidden z-1"
-        />
+        <Suspense
+          fallback={
+            <div className="h-[400px] bg-gray-200 w-full">Loading map...</div>
+          }
+        >
+          <MapComponent
+            latitude={coordinates.latitude}
+            longitude={coordinates.longitude}
+            className="md:block hidden z-1"
+          />
+        </Suspense>
         <CenterDetailsSection centerDetails={centerDetails} />
         <div className="bg-denim px-[16px] py-[32px] text-white">
           <div className="flex flex-col gap-[12px] items-center justify-center text-center">
