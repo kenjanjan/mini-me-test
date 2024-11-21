@@ -1,33 +1,17 @@
-'use client';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatTo12Hour } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
-import data from "@/data/medexpress.json";
 
 type CenterDetailsSectionProps = {
-  params: { slug: string };
+  centerDetails: any;
 };
 
-const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [centerDetails, setCenterDetails] = useState<any | null>(null);
-  const slug = params.slug;
+const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
+  const [isOpen, setIsOpen] = useState(false); // state to control dropdown visibility
 
-  useEffect(() => {
-    if (!slug) return;
-
-    const matchingData = data.response.results.filter(
-      (result) => result.data.id === slug
-    );
-
-    setCenterDetails(matchingData[0]?.data);
-  }, [slug]);
-
-  console.log(centerDetails,"details");
-
-  const centerTitle = `${centerDetails?.c_centerName}, ${centerDetails?.address.region} ${centerDetails?.name}`;
-  const centerAddress = `${centerDetails?.address.line1}, ${centerDetails?.address.city}, ${centerDetails?.address.region} ${centerDetails?.address.postalCode}`;
+  const centerTitle = `${centerDetails.c_centerName}, ${centerDetails.address.region} ${centerDetails.name}`;
+  const centerAddress = `${centerDetails.address.line1}, ${centerDetails.address.city}, ${centerDetails.address.region} ${centerDetails.address.postalCode}`;
 
   const today = new Date();
   const dayOfWeek = today.getDay();
@@ -44,7 +28,7 @@ const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
   const todayName = days[dayOfWeek];
 
   const weeklyHours = days.map((day) => {
-    const dayHours = centerDetails?.hours[day]?.openIntervals
+    const dayHours = centerDetails.hours[day]?.openIntervals
       ?.map(
         (interval: { start: string; end: string }) =>
           `${formatTo12Hour(interval.start)} - ${formatTo12Hour(interval.end)}`
@@ -56,7 +40,7 @@ const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
   });
 
   const todayHours =
-    centerDetails?.hours[todayName]?.openIntervals
+    centerDetails.hours[todayName]?.openIntervals
       ?.map(
         (interval: { start: string; end: string }) =>
           `${formatTo12Hour(interval.start)} - ${formatTo12Hour(interval.end)}`
@@ -67,7 +51,7 @@ const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
     setIsOpen(!isOpen);
   };
 
-  const reservatationLink = centerDetails?.reservationUrl.url;
+  const reservatationLink = centerDetails.reservationUrl.url;
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -111,7 +95,7 @@ const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
           </div>
 
           <div className="mt-[14px] flex flex-col md:flex-row gap-[30px]">
-            <p>{centerDetails?.mainPhone}</p>
+            <p>{centerDetails.mainPhone}</p>
             <p>Get Directions</p>
             <p className="md:hidden">View in Map</p>
           </div>
@@ -128,7 +112,7 @@ const CenterDetailsSection = ({ params }: CenterDetailsSectionProps) => {
         </div>
         <div className="flex gap-[12px] md:justify-start items-center justify-center">
           <div className="bg-terracota text-white py-[8px] px-[30px] font-bold">
-            <Link href={reservatationLink?reservatationLink:""} className="">
+            <Link href={reservatationLink} className="">
               SCHEDULE IN-PERSON VISIT
             </Link>
           </div>
