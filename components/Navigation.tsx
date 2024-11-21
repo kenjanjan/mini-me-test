@@ -8,7 +8,7 @@ const Navigation = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "h-[94px] flex w-full justify-between mx-auto items-center px-[100px]",
+        "h-[94px] flex w-full justify-between mx-auto items-center px-[70px]",
         className
       )}
     >

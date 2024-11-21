@@ -86,7 +86,7 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
                 const [day, ...time] = hour.split(":");
                 return (
                   <div key={index} className="flex gap-2">
-                    <span className="text-terracota">{day}:</span>
+                    <span className="text-terracota font-bold">{day}:</span>
                     <span className="text-primary">{time.join(":")}</span>
                   </div>
                 );

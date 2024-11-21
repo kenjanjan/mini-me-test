@@ -22,6 +22,7 @@ const CenterBody = ({ params }: CenterBodyProps) => {
   const [error, setError] = useState<string | null>(null);
   const [slug, setSlug] = useState<string | null>(null);
   const [listOfInsurance, setListOfInsurance] = useState<string[]>([]);
+  const [listOfServices, setListOfServices] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchSlug = async () => {
@@ -59,6 +60,7 @@ const CenterBody = ({ params }: CenterBodyProps) => {
       return;
     }
     setListOfInsurance(matchingData[0].data.insuranceAccepted);
+    setListOfServices(matchingData[0].data.services);
     setCoordinates({ latitude, longitude });
   }, [slug]);
 
@@ -92,7 +94,7 @@ const CenterBody = ({ params }: CenterBodyProps) => {
           </div>
         </div>
         <LinkSection />
-        <FAQsSection listOfInsurance={listOfInsurance}/>
+        <FAQsSection listOfInsurance={listOfInsurance} listOfServices={listOfServices}/>
         <BottomSection
           image="medex-image"
           title="Quality Care is Our Calling"

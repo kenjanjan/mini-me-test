@@ -8,7 +8,7 @@ const MobileNav = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "h-[80px] flex w-full justify-between mx-auto items-center px-[25px]",
+        "h-[80px] flex w-full justify-between mx-auto items-center px-[16px]",
         className
       )}
     >

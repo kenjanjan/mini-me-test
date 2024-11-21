@@ -4,6 +4,7 @@ import Image from "next/image";
 
 type FAQsSectionProps = {
   listOfInsurance: string[];
+  listOfServices: string[];
 };
 
 const FAQsSection = ({ listOfInsurance }: FAQsSectionProps) => {
@@ -15,6 +16,13 @@ const FAQsSection = ({ listOfInsurance }: FAQsSectionProps) => {
     maxItemsPerColumn * 2
   );
   const thirdColumn = listOfInsurance.slice(maxItemsPerColumn * 2);
+
+  const categoryCriteria = {
+    Illness: ["flu", "fever", "cold", "infection", "sickness"],
+    Injury: ["sprain", "fracture", "wound", "cut", "burn"],
+    Wellness: ["physical", "vaccination", "checkup", "health"],
+    "Work-related": ["drug test", "work physical", "employment"],
+  };
 
   return (
     <>

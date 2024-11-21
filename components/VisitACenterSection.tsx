@@ -15,6 +15,7 @@ const VisitACenterSection = ({ slug }: VisitACenterSectionProps) => {
 
   return (
     <div className="bg-background-blue px-[70px] py-10 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        
       {stateData.map(({ data }, index) => {
         const { c_centerName, address, name, id } = data;
         const centerTitle = `${c_centerName}, ${address.region} ${name}`;
