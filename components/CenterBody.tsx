@@ -21,6 +21,7 @@ const CenterBody = ({ params }: CenterBodyProps) => {
   const [centerDetails, setCenterDetails] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [slug, setSlug] = useState<string | null>(null);
+  const [listOfInsurance, setListOfInsurance] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchSlug = async () => {
@@ -57,7 +58,7 @@ const CenterBody = ({ params }: CenterBodyProps) => {
       setError(`Coordinates not found for slug: ${slug}`);
       return;
     }
-
+    setListOfInsurance(matchingData[0].data.insuranceAccepted);
     setCoordinates({ latitude, longitude });
   }, [slug]);
 
@@ -91,8 +92,12 @@ const CenterBody = ({ params }: CenterBodyProps) => {
           </div>
         </div>
         <LinkSection />
-        <FAQsSection />
-        <BottomSection />
+        <FAQsSection listOfInsurance={listOfInsurance}/>
+        <BottomSection
+          image="medex-image"
+          title="Quality Care is Our Calling"
+          message="MedExpress Urgent Care centers are The Joint Commission Accredited, having earned the Gold Seal of Approval - an internationally recognized distinction of our commitment and ability to providing safe, quality patient care."
+        />
       </>
     );
   }

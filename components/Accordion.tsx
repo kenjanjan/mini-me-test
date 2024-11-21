@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/utils/utils";
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
@@ -67,9 +66,9 @@ const Accordion = ({ icon, id, title, children }: AccordionProps) => {
     <div className={cn("w-full bg-white mb-1 ")}>
       <div
         className={cn(
-          "font-bold py-[18px] relative px-[26px] cursor-pointer flex justify-center  items-center text-primary md:gap-6",
+          "font-bold py-[18px] relative px-[26px] cursor-pointer flex justify-between text-primary md:gap-6",
           {
-            "bg-beige": variant === "independent",
+            "bg-beige justify-center items-center": variant === "independent",
             "bg-terracota text-white": variant === "independent" && isOpen,
           }
         )}
@@ -78,7 +77,8 @@ const Accordion = ({ icon, id, title, children }: AccordionProps) => {
         <span
           className={cn(
             "flex items-center gap-[16px] text-primary font-bold text-[21px] md:text-[24px] leading-[25.2px] md:leading-[28.8px]",
-            { "text-white": variant === "independent" && isOpen }
+            { "text-white text-center": variant === "independent" && isOpen },
+            { "text-center": variant === "independent" }
           )}
         >
           <Image
@@ -101,15 +101,16 @@ const Accordion = ({ icon, id, title, children }: AccordionProps) => {
           alt={`${variant === "exclusive" ? "dropdown-icon" : "chevron-down"}`}
           width={20}
           height={14}
-          className={cn("duration-300 transition-all absolute right-[16px] md:relative", {
+          className={cn("duration-300 transition-all", {
             "rotate-180": isOpen,
+            "absolute right-[16px] md:relative": variant === "independent",
           })}
         />
       </div>
 
       <div
         className={`overflow-hidden transition-all duration-1000 ${
-          isOpen ? "max-h-[1000px]" : "max-h-0"
+          isOpen ? "max-h-[2000px]" : "max-h-0"
         }`}
       >
         {isOpen && <div className="p-4 bg-white text-primary">{children}</div>}
