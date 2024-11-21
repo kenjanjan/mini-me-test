@@ -8,7 +8,7 @@ import Image from "next/image";
 const FindACenter = () => {
   return (
     <>
-      <HeroSection message="find a center" image="medex-image" variant="hidden"/>
+      <HeroSection message={`find a \ncenter`} image="find-a-center-hero" variant="hidden"/>
       <FindACenterSection />
       <ServicesSection />
       <AverageWaitSection />
