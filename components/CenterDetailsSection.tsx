@@ -64,8 +64,8 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
             onClick={toggleDropdown}
             className="flex flex-col gap-3 text-[18px] items-center justify-start mt-[24px] w-fit cursor-pointer"
           >
-            <span className="text-terracota w-fit flex gap-4 items-center">
-              Today's Hours: <span className="text-primary">{todayHours}</span>
+            <span className="text-terracota font-bold w-fit flex gap-4 items-center">
+              Today's Hours: <span className="text-primary font-normal">{todayHours}</span>
               <Image
                 src={"/assets/dropdown-terracota.png"}
                 alt="dropdown-terracota"

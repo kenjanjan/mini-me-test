@@ -16,10 +16,58 @@ const ServicesSection = () => {
       <div>
         <AccordionProvider variant="exclusive">
           <Accordion icon="illness" id="illness" title="Illness">
-            <h1>Illness</h1>
+            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
+              <ul className="text-start space-y-[12px] w-max text-[18px]">
+                <li>Allergies</li>
+                <li>COVID-19</li>
+                <li>Flu</li>
+                <li>Hand, foot, and mouth disease</li>
+                <li>Pink eye</li>
+                <li>Rashes</li>
+                <li>Mono treatment</li>
+                <li>Strep throat</li>
+              </ul>
+              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+                <li>Colds</li>
+                <li>Ear infections</li>
+                <li>Gastrointestinal illnesses</li>
+                <li>Lyme disease</li>
+                <li>Respiratory illnesses</li>
+                <li>Labs, TB Testing, IVs, EKGs</li>
+                <li>Sinus infections</li>
+                <li>UTIs</li>
+              </ul>
+            </div>
           </Accordion>
           <Accordion icon="injury" id="injury" title="Injury">
-            <h1>Injury</h1>
+            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
+              <ul className="text-start space-y-[12px] w-max text-[18px]">
+                <li>Bites and Stings</li>
+                <li>Broken Bones</li>
+                <li>Burns</li>
+                <li>Cuts and Scrapes</li>
+                <li>Frostbite</li>
+                <li>Heat Exhaustion</li>
+                <li>Lice</li>
+                <li>Motor Vehicle Accident</li>
+                <li>Nosebleed Treatment</li>
+                <li>Strains and Sprains</li>
+                <li>X-rays</li>
+              </ul>
+              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+                <li>Bites and Stings</li>
+                <li>Broken Bones</li>
+                <li>Burns</li>
+                <li>Cuts and Scrapes</li>
+                <li>Frostbite</li>
+                <li>Heat Exhaustion</li>
+                <li>Lice</li>
+                <li>Motor Vehicle Accident</li>
+                <li>Nosebleed Treatment</li>
+                <li>Strains and Sprains</li>
+                <li>X-rays</li>
+              </ul>
+            </div>
           </Accordion>
           <Accordion icon="skin" id="skin" title="Skin Ailments">
             <h1>Skin Ailments</h1>
@@ -29,7 +77,26 @@ const ServicesSection = () => {
             id="wellness"
             title="Wellness and Prevention"
           >
-            <h1>Wellness and Prevention</h1>
+            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
+              <ul className="text-start space-y-[12px] w-max text-[18px]">
+                <li>Camp, School, and Sports Physicals</li>
+                <li>Earwax Removal</li>
+                <li>Flu Shots</li>
+                <li>Gout</li>
+                <li>Leg Pain and Swollen Veins</li>
+                <li>Vaccinations</li>
+                <li>Women's Health</li>
+              </ul>
+              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+                <li>Camp, School, and Sports Physicals</li>
+                <li>Earwax Removal</li>
+                <li>Flu Shots</li>
+                <li>Gout</li>
+                <li>Leg Pain and Swollen Veins</li>
+                <li>Vaccinations</li>
+                <li>Women's Health</li>
+              </ul>
+            </div>
           </Accordion>
           <Accordion icon="women" id="women" title="Women's Health">
             <h1>Women's Health</h1>

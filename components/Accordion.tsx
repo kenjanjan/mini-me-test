@@ -70,6 +70,7 @@ const Accordion = ({ icon, id, title, children }: AccordionProps) => {
           {
             "bg-beige justify-center items-center": variant === "independent",
             "bg-terracota text-white": variant === "independent" && isOpen,
+            "border-b border-terracota": variant === "exclusive",
           }
         )}
         onClick={handleToggle}
