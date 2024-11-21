@@ -47,7 +47,7 @@ const LinkSection = () => {
         </div>
         <div className="flex flex-col items-center  -mt-5 md:-mt-[30px] text-denim text-center">
           <Image
-            src={"assets/phone-icon.svg"}
+            src={"/assets/phone-icon.svg"}
             alt="phone-icon"
             width={217}
             height={261}

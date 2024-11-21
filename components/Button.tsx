@@ -9,7 +9,7 @@ const Button = ({ name, variant }: { name: string; variant?: string }) => {
           <input type="checkbox" className="peer hidden" />
           <Link
             href={`/${
-              name === "FIND A CENTER" ? "find-a-center" : "get-started"
+              name === "FIND A CENTER" ? "find-a-center" : "virtual-visits"
             }`}
             className={cn(
               "capitalize px-[28px] py-[14px] border border-terracota text-terracota font-bold leading-[25.2px] hover:bg-terracota hover:text-white",

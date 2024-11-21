@@ -14,7 +14,7 @@ const ServicesSection = () => {
         </p>
       </div>
       <div>
-        <AccordionProvider>
+        <AccordionProvider variant="exclusive">
           <Accordion icon="illness" id="illness" title="Illness">
             <h1>Illness</h1>
           </Accordion>
