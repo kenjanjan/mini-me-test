@@ -4,22 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface CenterDetails {
-    c_centerName: string;
-    address: {
-      line1: string;
-      city: string;
-      region: string;
-      postalCode: string;
-    };
-    name: string;
-    hours: Record<string, { openIntervals: { start: string; end: string }[] }>;
-    reservationUrl: { url: string };
-    mainPhone: string;
-  }
-  
-  type CenterDetailsSectionProps = {
-    centerDetails: CenterDetails;
+  c_centerName: string;
+  address: {
+    line1: string;
+    city: string;
+    region: string;
+    postalCode: string;
   };
+  name: string;
+  hours: Record<string, { openIntervals: { start: string; end: string }[] }>;
+  reservationUrl: { url: string };
+  mainPhone: string;
+}
+
+type CenterDetailsSectionProps = {
+  centerDetails: CenterDetails;
+};
 
 const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
   const [isOpen, setIsOpen] = useState(false); // state to control dropdown visibility
@@ -79,7 +79,7 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
             className="flex flex-col gap-3 text-[18px] items-center justify-start mt-[24px] w-fit cursor-pointer"
           >
             <span className="text-terracota font-bold w-fit flex gap-4 items-center">
-            Today&apos;s Hours:{" "}
+              Today&apos;s Hours:{" "}
               <span className="text-primary font-normal">{todayHours}</span>
               <Image
                 src={"/assets/dropdown-terracota.png"}
@@ -126,16 +126,16 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
           <p className="md:text-[18px]">Walk ins are always welcome.</p>
         </div>
         <div className="flex gap-[12px] md:justify-start items-center justify-center">
-          <div className="bg-terracota text-white py-[8px] px-[30px] font-bold">
-            <Link href={reservatationLink} className="">
+          <Link href={reservatationLink} className="w-full">
+            <div className="bg-terracota text-white py-[8px] px-[30px] font-bold">
               SCHEDULE IN-PERSON VISIT
-            </Link>
-          </div>
-          <div className="bg-denim text-white py-[8px] px-[30px] font-bold">
-            <Link href={"/virtual-visits"} className="">
+            </div>
+          </Link>
+          <Link href={"/virtual-visits"} className="w-full">
+            <div className="bg-denim text-white py-[8px] px-[30px] font-bold">
               SCHEDULE VIRTUAL VISIT
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
         <div>
           <p className="text-[12px] leading-[14.4px] md:w-2/4 italic">

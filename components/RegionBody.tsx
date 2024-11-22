@@ -29,7 +29,7 @@ const RegionBody = () => {
           {` ${state}`} MedExpress neighborhood medical center.
         </p>
       </div>
-      <VisitACenterSection slug={slug} />
+      <VisitACenterSection slug={slug}  state={state}/>
     </>
   );
 };
