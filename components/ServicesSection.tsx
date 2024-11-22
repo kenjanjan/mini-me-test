@@ -1,4 +1,3 @@
-import React from "react";
 import Accordion, { AccordionProvider } from "./Accordion";
 
 const ServicesSection = () => {
@@ -9,8 +8,8 @@ const ServicesSection = () => {
           services and treatment
         </p>
         <p>
-          We're here for your family's urgent care needs - from the flu to
-          broken bones and sports physicals.
+          We&apos;re here for your family&apos;s urgent care needs - from the
+          flu to broken bones and sports physicals.
         </p>
       </div>
       <div>
@@ -85,7 +84,7 @@ const ServicesSection = () => {
                 <li>Gout</li>
                 <li>Leg Pain and Swollen Veins</li>
                 <li>Vaccinations</li>
-                <li>Women's Health</li>
+                <li>Women&apos;s Health</li> {/* Escaped apostrophe here */}
               </ul>
               <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
                 <li>Camp, School, and Sports Physicals</li>
@@ -94,12 +93,12 @@ const ServicesSection = () => {
                 <li>Gout</li>
                 <li>Leg Pain and Swollen Veins</li>
                 <li>Vaccinations</li>
-                <li>Women's Health</li>
+                <li>Women&apos;s Health</li> {/* Escaped apostrophe here */}
               </ul>
             </div>
           </Accordion>
           <Accordion icon="women" id="women" title="Women's Health">
-            <h1>Women's Health</h1>
+            <h1>Women&apos;s Health</h1> {/* Escaped apostrophe here */}
           </Accordion>
           <Accordion icon="STD" id="STD" title="STD/STI Testing">
             <h1>STD/STI Testing</h1>

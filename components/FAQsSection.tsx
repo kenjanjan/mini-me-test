@@ -17,13 +17,6 @@ const FAQsSection = ({ listOfInsurance }: FAQsSectionProps) => {
   );
   const thirdColumn = listOfInsurance.slice(maxItemsPerColumn * 2);
 
-  const categoryCriteria = {
-    Illness: ["flu", "fever", "cold", "infection", "sickness"],
-    Injury: ["sprain", "fracture", "wound", "cut", "burn"],
-    Wellness: ["physical", "vaccination", "checkup", "health"],
-    "Work-related": ["drug test", "work physical", "employment"],
-  };
-
   return (
     <>
       <AccordionProvider variant="independent">
@@ -127,7 +120,7 @@ const FAQsSection = ({ listOfInsurance }: FAQsSectionProps) => {
               everything go smoothly, please bring the following with you:
             </h4>
             <ul className="w-[420px] px-[16px] md:px-0 list-disc pl-10 md:pl-5 space-y-2 text-start">
-              <li>Driver's license or picture ID</li>
+              <li>Driver&apos;s license or picture ID</li>
               <li>Insurance card (if you have insurance)</li>
               <li>Payment for co-pay or self-pay</li>
               <li>

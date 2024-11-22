@@ -1,16 +1,11 @@
 import React from "react";
 import CenterBody from "@/components/CenterBody";
 
-interface CenterViewProps {
-  params: { slug: string };
-}
-
-const CenterView: React.FC<CenterViewProps> = ({ params }) => {
+// The 'params' prop is automatically passed by Next.js for dynamic routes
+export default function CenterView() {
   return (
     <>
-      <CenterBody params={params} />
+      <CenterBody />
     </>
   );
-};
-
-export default CenterView;
+}

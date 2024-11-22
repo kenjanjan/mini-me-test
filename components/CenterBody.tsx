@@ -7,36 +7,21 @@ import CenterDetailsSection from "@/components/CenterDetailsSection";
 import LinkSection from "@/components/LinkSection";
 import FAQsSection from "@/components/FAQsSection";
 import BottomSection from "@/components/BottomSection";
-type CenterBodyProps = {
-  params: {
-    slug: string;
-  };
-};
+import { useParams } from "next/navigation";
 
-const CenterBody = ({ params }: CenterBodyProps) => {
+const CenterBody = () => {
+  const { slug } = useParams();
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
   } | null>(null);
+
+  // TODO - Fix any type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [centerDetails, setCenterDetails] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [slug, setSlug] = useState<string | null>(null);
   const [listOfInsurance, setListOfInsurance] = useState<string[]>([]);
   const [listOfServices, setListOfServices] = useState<string[]>([]);
-
-  useEffect(() => {
-    const fetchSlug = async () => {
-      try {
-        const resolvedParams = await params;
-        setSlug(resolvedParams.slug);
-      } catch (error) {
-        console.error("Error resolving params:", error);
-        setError("Failed to load slug");
-      }
-    };
-
-    fetchSlug();
-  }, [params]);
 
   useEffect(() => {
     if (!slug) return;
@@ -94,7 +79,10 @@ const CenterBody = ({ params }: CenterBodyProps) => {
           </div>
         </div>
         <LinkSection />
-        <FAQsSection listOfInsurance={listOfInsurance} listOfServices={listOfServices}/>
+        <FAQsSection
+          listOfInsurance={listOfInsurance}
+          listOfServices={listOfServices}
+        />
         <BottomSection
           image="medex-image"
           title="Quality Care is Our Calling"

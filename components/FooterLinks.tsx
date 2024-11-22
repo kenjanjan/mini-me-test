@@ -2,7 +2,7 @@ import { cn } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const FooterLinks = ({ variant }: { variant?: string }) => {
+const FooterLinks = () => {
   return (
     <div
       className={cn(

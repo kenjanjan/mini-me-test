@@ -24,7 +24,7 @@ const LinkSection = () => {
           <div className="flex flex-col items-center justify-center gap-[6px] md:gap-[16px] md:mt-[25px] md:w-3/4">
             <h4>Visit a Center</h4>
             <p className="mb-[10px]">
-              Your neighborhood medical center is here to care for your family's
+              Your neighborhood medical center is here to care for your family&apos;s
               illnesses and injuries.
             </p>
             <Button name="FIND A CENTER" />

@@ -3,9 +3,23 @@ import { formatTo12Hour } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-type CenterDetailsSectionProps = {
-  centerDetails: any;
-};
+interface CenterDetails {
+    c_centerName: string;
+    address: {
+      line1: string;
+      city: string;
+      region: string;
+      postalCode: string;
+    };
+    name: string;
+    hours: Record<string, { openIntervals: { start: string; end: string }[] }>;
+    reservationUrl: { url: string };
+    mainPhone: string;
+  }
+  
+  type CenterDetailsSectionProps = {
+    centerDetails: CenterDetails;
+  };
 
 const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
   const [isOpen, setIsOpen] = useState(false); // state to control dropdown visibility
@@ -65,7 +79,8 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
             className="flex flex-col gap-3 text-[18px] items-center justify-start mt-[24px] w-fit cursor-pointer"
           >
             <span className="text-terracota font-bold w-fit flex gap-4 items-center">
-              Today's Hours: <span className="text-primary font-normal">{todayHours}</span>
+            Today&apos;s Hours:{" "}
+              <span className="text-primary font-normal">{todayHours}</span>
               <Image
                 src={"/assets/dropdown-terracota.png"}
                 alt="dropdown-terracota"
