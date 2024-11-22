@@ -30,7 +30,7 @@ const VisitACenterSection = ({ slug, state }: VisitACenterSectionProps) => {
       </div>
       <div className=" grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {stateData.map(({ data }, index) => {
-          const { c_centerName, address, name } = data;
+          const { c_centerName, address, name, id } = data;
           const centerTitle = `${c_centerName}, ${address.region} ${name}`;
           const regionAddress = `${address.line1}, ${address.city}, ${address.region} ${address.countryCode} ${address.postalCode}`;
 
@@ -68,20 +68,24 @@ const VisitACenterSection = ({ slug, state }: VisitACenterSectionProps) => {
               key={index}
               className="flex flex-col gap-[15px] bg-white w-full max-w-[307px] items-center overflow-hidden"
             >
-              <div>
-                <Image
-                  src={"/assets/images/center-image.png"}
-                  alt="center-image"
-                  width={307}
-                  height={160}
-                  className="rounded-t max-h-[160px]"
-                />
-              </div>
+              <Link href={`/centers/${id}`}>
+                <div>
+                  <Image
+                    src={"/assets/images/center-image.png"}
+                    alt="center-image"
+                    width={307}
+                    height={160}
+                    className="rounded-t max-h-[160px]"
+                  />
+                </div>
+              </Link>
               <div className=" flex flex-col text-center pb-[13px] px-[21.54px] gap-[16px]">
                 <div className="flex flex-col gap-[8px] text-start">
-                  <h1 className="text-denim text-[18px] leading-[22.5px] tracking-[-2.5%]">
-                    {centerTitle}
-                  </h1>
+                  <Link href={`/centers/${id}`}>
+                    <h1 className="text-denim text-[18px] leading-[22.5px] tracking-[-2.5%]">
+                      {centerTitle}
+                    </h1>
+                  </Link>
                   <p className="text-[14px] leading-[17.5px] tracking-[-2.5%]">
                     {regionAddress}
                   </p>
