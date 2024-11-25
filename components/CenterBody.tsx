@@ -27,7 +27,7 @@ const CenterBody = () => {
     if (!id) return;
 
     const matchingData = data.response.results.filter(
-      (result) => result.data.id === id
+      (result) => result.data.id === id,
     );
 
     if (matchingData.length === 0) {
@@ -58,18 +58,21 @@ const CenterBody = () => {
       <>
         <Suspense
           fallback={
-            <div className="h-[400px] bg-gray-200 w-full">Loading map...</div>
+            <div className="h-[400px] w-full bg-gray-200">Loading map...</div>
           }
         >
           <MapComponent
             latitude={coordinates.latitude}
             longitude={coordinates.longitude}
-            className="md:block hidden z-1"
+            className="z-1 hidden md:block"
           />
         </Suspense>
-        <CenterDetailsSection centerDetails={centerDetails} coordinates={coordinates}/>
+        <CenterDetailsSection
+          centerDetails={centerDetails}
+          coordinates={coordinates}
+        />
         <div className="bg-denim px-[16px] py-[32px] text-white">
-          <div className="flex flex-col gap-[12px] items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center gap-[12px] text-center">
             <h3>MedExpress or Emergency Room?</h3>
             <p className="md:w-1/2">
               Most MedExpress visits cost under 10% of the average emergency

@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HeroSection from "@/components/HeroSection";
 import VisitACenterSection from "@/components/VisitACenterSection";
-import { notFound, useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 const stateMap: Record<string, string> = {
   PA: "Pennsylvania",
@@ -12,23 +12,8 @@ const stateMap: Record<string, string> = {
 
 const RegionBody = () => {
   const { region } = useParams() as { region: string };
-  const router = useRouter();
 
-  const [validRegion, setValidRegion] = useState(true);
-  const [state, setState] = useState("");
-
-  useEffect(() => {
-    if (stateMap[region]) {
-      setState(stateMap[region]);
-    } else {
-      setValidRegion(false);
-      notFound();
-    }
-  }, [region, router]);
-
-  if (!validRegion) {
-    return notFound();
-  }
+  const state = stateMap[region] || "Unknown State";
 
   return (
     <>
