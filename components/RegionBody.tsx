@@ -1,8 +1,8 @@
 'use client';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import VisitACenterSection from "@/components/VisitACenterSection";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const stateMap: Record<string, string> = {
   PA: "Pennsylvania",
@@ -12,8 +12,23 @@ const stateMap: Record<string, string> = {
 
 const RegionBody = () => {
   const { region } = useParams() as { region: string };
+  const router = useRouter();
+  
+  const [validRegion, setValidRegion] = useState(true);
+  const [state, setState] = useState("");
 
-  const state = stateMap[region] || "Unknown State";
+  useEffect(() => {
+    if (stateMap[region]) {
+      setState(stateMap[region]);
+    } else {
+      setValidRegion(false);
+      router.push('/404'); 
+    }
+  }, [region, router]);
+
+  if (!validRegion) {
+    return null;
+  }
 
   return (
     <>
@@ -29,7 +44,7 @@ const RegionBody = () => {
           {` ${state}`} MedExpress neighborhood medical center.
         </p>
       </div>
-      <VisitACenterSection region={region}  state={state}/>
+      <VisitACenterSection region={region} state={state} />
     </>
   );
 };
