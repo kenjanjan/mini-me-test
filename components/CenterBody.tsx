@@ -1,80 +1,56 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
 import MapComponent from "@/components/Map";
+import React, { Suspense, useEffect, useState } from "react";
 import data from "@/data/medexpress.json";
+import NotFound from "@/app/not-found";
 import CenterDetailsSection from "@/components/CenterDetailsSection";
 import LinkSection from "@/components/LinkSection";
 import FAQsSection from "@/components/FAQsSection";
 import BottomSection from "@/components/BottomSection";
-import { notFound, useParams } from "next/navigation";
-
-async function fetchCenterData(
-  region: string,
-  center_name: string,
-  id: string,
-) {
-  const decodedCenterName = decodeURIComponent(center_name);
-
-  const centerData = data.response.results.filter(
-    (result: {
-      data: { isoRegionCode: string; c_centerName: string; id: string };
-    }) =>
-      result.data.isoRegionCode === region &&
-      result.data.c_centerName === decodedCenterName &&
-      result.data.id === id,
-  );
-
-  return centerData.length > 0 ? centerData[0] : null;
-}
+import { useParams } from "next/navigation";
 
 const CenterBody = () => {
-  const { region, center_name, id } = useParams();
-  //TODO: Fix any type
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [centerData, setCenterData] = useState<any | null>(null);
+  const { id } = useParams();
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
   } | null>(null);
+
+  // TODO - Fix any type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [centerDetails, setCenterDetails] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [listOfInsurance, setListOfInsurance] = useState<string[]>([]);
   const [listOfServices, setListOfServices] = useState<string[]>([]);
 
   useEffect(() => {
-    if (
-      typeof region !== "string" ||
-      typeof center_name !== "string" ||
-      typeof id !== "string"
-    ) {
-      return notFound();
+    if (!id) return;
+
+    const matchingData = data.response.results.filter(
+      (result) => result.data.id === id
+    );
+
+    if (matchingData.length === 0) {
+      setError(`No data found for id: ${id}`);
+      return;
     }
 
-    const fetchData = async () => {
-      const data = await fetchCenterData(region, center_name, id);
-      if (!data) {
-        setError("Center not found");
-        notFound();
-      } else {
-        setCenterData(data);
-        const latitude = data.data.geocodedCoordinate?.latitude;
-        const longitude = data.data.geocodedCoordinate?.longitude;
+    setCenterDetails(matchingData[0].data);
 
-        if (latitude && longitude) {
-          setCoordinates({ latitude, longitude });
-        } else {
-          setError("Coordinates not found");
-        }
+    const latitude = matchingData[0].data.geocodedCoordinate?.latitude;
+    const longitude = matchingData[0].data.geocodedCoordinate?.longitude;
 
-        setListOfInsurance(data.data.insuranceAccepted);
-        setListOfServices(data.data.services);
-      }
-    };
-
-    fetchData();
-  }, [region, center_name, id]);
+    if (!latitude || !longitude) {
+      setError(`Coordinates not found for id: ${id}`);
+      return;
+    }
+    setListOfInsurance(matchingData[0].data.insuranceAccepted);
+    setListOfServices(matchingData[0].data.services);
+    setCoordinates({ latitude, longitude });
+  }, [id]);
 
   if (error) {
-    notFound();
+    return <NotFound />;
   }
 
   if (coordinates) {
@@ -82,21 +58,18 @@ const CenterBody = () => {
       <>
         <Suspense
           fallback={
-            <div className="h-[400px] w-full bg-gray-200">Loading map...</div>
+            <div className="h-[400px] bg-gray-200 w-full">Loading map...</div>
           }
         >
           <MapComponent
             latitude={coordinates.latitude}
             longitude={coordinates.longitude}
-            className="z-1 hidden md:block"
+            className="md:block hidden z-1"
           />
         </Suspense>
-        <CenterDetailsSection
-          centerDetails={centerData.data}
-          coordinates={coordinates}
-        />
+        <CenterDetailsSection centerDetails={centerDetails} coordinates={coordinates}/>
         <div className="bg-denim px-[16px] py-[32px] text-white">
-          <div className="flex flex-col items-center justify-center gap-[12px] text-center">
+          <div className="flex flex-col gap-[12px] items-center justify-center text-center">
             <h3>MedExpress or Emergency Room?</h3>
             <p className="md:w-1/2">
               Most MedExpress visits cost under 10% of the average emergency
@@ -113,13 +86,11 @@ const CenterBody = () => {
         <BottomSection
           image="medex-image"
           title="Quality Care is Our Calling"
-          message="MedExpress Urgent Care centers are The Joint Commission Accredited, having earned the Gold Seal of Approval - an internationally recognized distinction of our commitment and ability to providing safe, quality patient care."
+          message="MedExpress Urgent Care centers are The Joint Commission Accredited, having earned the Gold Seal of Approval - an internationally recognized distinction of our commitment and ability to providing safe, quality patient care."
         />
       </>
     );
   }
-
-  return null;
 };
 
 export default CenterBody;
