@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import VisitACenterSection from "@/components/VisitACenterSection";
-import { useParams, useRouter } from "next/navigation";
+import { notFound, useParams, useRouter } from "next/navigation";
 
 const stateMap: Record<string, string> = {
   PA: "Pennsylvania",
@@ -22,12 +22,12 @@ const RegionBody = () => {
       setState(stateMap[region]);
     } else {
       setValidRegion(false);
-      router.push('/404'); 
+      notFound();
     }
   }, [region, router]);
 
   if (!validRegion) {
-    return null;
+    return notFound();
   }
 
   return (
