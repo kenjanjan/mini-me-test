@@ -17,7 +17,7 @@ const QuoteSection = () => {
     },
   ];
   return (
-    <div className="bg-background-blue-2 relative px-6 md:px-[180px] py-10  md:pt-[80px] md:pb-[70px]">
+    <div className="relative bg-background-blue-2 px-6 py-10 md:px-[180px] md:pb-[70px] md:pt-[80px]">
       <QuoteCarousel quotes={quotes} />
     </div>
   );

@@ -13,16 +13,21 @@ const FAQsSection = ({ listOfInsurance, listOfServices }: FAQsSectionProps) => {
   const firstColumn = listOfInsurance.slice(0, maxItemsPerColumn);
   const secondColumn = listOfInsurance.slice(
     maxItemsPerColumn,
-    maxItemsPerColumn * 2
+    maxItemsPerColumn * 2,
   );
   const thirdColumn = listOfInsurance.slice(maxItemsPerColumn * 2);
 
-  const servicesFirstColumn = listOfServices.slice(0, servicesMaxItemsPerColumn);
+  const servicesFirstColumn = listOfServices.slice(
+    0,
+    servicesMaxItemsPerColumn,
+  );
   const servicesSecondColumn = listOfServices.slice(
     servicesMaxItemsPerColumn,
-    servicesMaxItemsPerColumn * 2
+    servicesMaxItemsPerColumn * 2,
   );
-  const servicesThirdColumn = listOfServices.slice(servicesMaxItemsPerColumn * 2);
+  const servicesThirdColumn = listOfServices.slice(
+    servicesMaxItemsPerColumn * 2,
+  );
 
   return (
     <>
@@ -81,23 +86,21 @@ const FAQsSection = ({ listOfInsurance, listOfServices }: FAQsSectionProps) => {
               <h4>Work-related:</h4>
             </div>
           </div> */}
-           <div className="space-y-[12px] mb-[33px]">
-            <h3 className="text-denim text-center w-full">
-              List of Services
-            </h3>
+          <div className="mb-[33px] space-y-[12px]">
+            <h3 className="w-full text-center text-denim">List of Services</h3>
           </div>
-          <div className="hidden md:grid grid-cols-3 gap-5 w-full md:px-[50px] pb-[39px]">
-            <ul className="list-disc pl-5 space-y-2">
+          <div className="hidden w-full grid-cols-3 gap-5 pb-[39px] md:grid md:px-[50px]">
+            <ul className="list-disc space-y-2 pl-5">
               {servicesFirstColumn.map((services, index) => (
                 <li key={index}>{services}</li>
               ))}
             </ul>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {servicesSecondColumn.map((services, index) => (
                 <li key={index}>{services}</li>
               ))}
             </ul>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {servicesThirdColumn.map((services, index) => (
                 <li key={index}>{services}</li>
               ))}
@@ -105,8 +108,8 @@ const FAQsSection = ({ listOfInsurance, listOfServices }: FAQsSectionProps) => {
           </div>
         </Accordion>
         <Accordion id="insurance" title="What insurance is accepted?">
-          <div className="space-y-[12px] mb-[33px]">
-            <h3 className="text-denim text-center w-full">
+          <div className="mb-[33px] space-y-[12px]">
+            <h3 className="w-full text-center text-denim">
               List of insurances
             </h3>
             <p className="md:px-[50px]">
@@ -117,25 +120,25 @@ const FAQsSection = ({ listOfInsurance, listOfServices }: FAQsSectionProps) => {
               below.
             </p>
           </div>
-          <div className="hidden md:grid grid-cols-3 gap-5 w-full md:px-[50px] pb-[39px]">
-            <ul className="list-disc pl-5 space-y-2">
+          <div className="hidden w-full grid-cols-3 gap-5 pb-[39px] md:grid md:px-[50px]">
+            <ul className="list-disc space-y-2 pl-5">
               {firstColumn.map((insurance, index) => (
                 <li key={index}>{insurance}</li>
               ))}
             </ul>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {secondColumn.map((insurance, index) => (
                 <li key={index}>{insurance}</li>
               ))}
             </ul>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {thirdColumn.map((insurance, index) => (
                 <li key={index}>{insurance}</li>
               ))}
             </ul>
           </div>
-          <div className="md:hidden  pb-[12px] grid grid-cols-1">
-            <ul className="list-disc  pl-5 space-y-2">
+          <div className="grid grid-cols-1 pb-[12px] md:hidden">
+            <ul className="list-disc space-y-2 pl-5">
               {listOfInsurance.map((insurance, index) => (
                 <li key={index}>{insurance}</li>
               ))}
@@ -143,12 +146,12 @@ const FAQsSection = ({ listOfInsurance, listOfServices }: FAQsSectionProps) => {
           </div>
         </Accordion>
         <Accordion id="requirements" title="What should I bring for my visit?">
-          <div className="pt-[46px] pb-[52px] px-[16px] text-center flex flex-col items-center gap-[35px]">
+          <div className="flex flex-col items-center gap-[35px] px-[16px] pb-[52px] pt-[46px] text-center">
             <h4 className="font-normal md:w-2/4">
               We want your visit to be as convenient as possible. To help
               everything go smoothly, please bring the following with you:
             </h4>
-            <ul className="w-[420px] px-[16px] md:px-0 list-disc pl-10 md:pl-5 space-y-2 text-start">
+            <ul className="w-[420px] list-disc space-y-2 px-[16px] pl-10 text-start md:px-0 md:pl-5">
               <li>Driver&apos;s license or picture ID</li>
               <li>Insurance card (if you have insurance)</li>
               <li>Payment for co-pay or self-pay</li>

@@ -13,9 +13,9 @@ const HeroSection = ({ message, image, variant }: HeroSectionProps) => {
   const messageLines = message.split("\n");
 
   return (
-    <div className="w-full relative overflow-hidden bg-light-blue h-[232px] md:h-[450px] flex flex-col justify-center items-start">
+    <div className="relative flex h-[232px] w-full flex-col items-start justify-center overflow-hidden bg-light-blue md:h-[450px]">
       {/* Content container */}
-      <div className="relative z-10 flex flex-col w-3/4 md:w-1/2 px-[25px] md:px-[70px] md:gap-[24px] gap-3 md:justify-start md:items-start h-full pt-[22px] md:pt-[63px]">
+      <div className="relative z-10 flex h-full w-3/4 flex-col gap-3 px-[25px] pt-[22px] md:w-1/2 md:items-start md:justify-start md:gap-[24px] md:px-[70px] md:pt-[63px]">
         {messageLines.map((line, index) => (
           <h1 key={index} className="text-denim">
             {line}
@@ -32,7 +32,7 @@ const HeroSection = ({ message, image, variant }: HeroSectionProps) => {
         alt="homepage-hero-bg"
         width={1920}
         height={118}
-        className="absolute bottom-0 z-1 md:block hidden"
+        className="z-1 absolute bottom-0 hidden md:block"
       />
 
       {/* Hero image */}
@@ -42,8 +42,8 @@ const HeroSection = ({ message, image, variant }: HeroSectionProps) => {
         width={563}
         height={450}
         className={cn(
-          "absolute right-0 top-0 z-2 h-[232px] md:h-[450px] w-[282px] md:w-[563px] md:right-[93px]",
-          { "-mr-[85px] md:mr-0": image === "find-a-center-hero" }
+          "z-2 absolute right-0 top-0 h-[232px] w-[282px] md:right-[93px] md:h-[450px] md:w-[563px]",
+          { "-mr-[85px] md:mr-0": image === "find-a-center-hero" },
         )}
       />
     </div>

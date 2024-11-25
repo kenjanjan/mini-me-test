@@ -12,13 +12,13 @@ type VisitACenterSectionProps = {
 const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
   const stateData = data.response.results.filter(
     (result: { data: { isoRegionCode: string } }) =>
-      result.data.isoRegionCode === region
+      result.data.isoRegionCode === region,
   );
 
   return (
-    <div className="bg-background-blue px-[70px] pt-[67px] pb-[59px] space-y-[25px]">
-      <div className="space-y-[12px] text-white w-full ">
-        <p className="text-center md:text-[36px] text-[32px] leading-[38.4px] md:leading-[43.2px]">
+    <div className="space-y-[25px] bg-background-blue px-[70px] pb-[59px] pt-[67px]">
+      <div className="w-full space-y-[12px] text-white">
+        <p className="text-center text-[32px] leading-[38.4px] md:text-[36px] md:leading-[43.2px]">
           Visit a center in {state}
         </p>
         <p className="text-start">
@@ -28,7 +28,7 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
           insurance is in-network, please check the listing below.
         </p>
       </div>
-      <div className=" grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {stateData.map(({ data }, index) => {
           const { c_centerName, address, name, id } = data;
           const centerTitle = `${c_centerName}, ${address.region} ${name}`;
@@ -56,8 +56,8 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
               ?.map(
                 (interval: { start: string; end: string }) =>
                   `${formatTo12Hour(interval.start)} - ${formatTo12Hour(
-                    interval.end
-                  )}`
+                    interval.end,
+                  )}`,
               )
               .join(", ") || "Closed";
 
@@ -66,7 +66,7 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
           return (
             <div
               key={index}
-              className="flex flex-col gap-[15px] bg-white w-full max-w-[307px] items-center overflow-hidden"
+              className="flex w-full max-w-[307px] flex-col items-center gap-[15px] overflow-hidden bg-white"
             >
               <Link href={`/location/${region}/${c_centerName}/${id}`}>
                 <div>
@@ -75,14 +75,14 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
                     alt="center-image"
                     width={307}
                     height={160}
-                    className="rounded-t max-h-[160px]"
+                    className="max-h-[160px] rounded-t"
                   />
                 </div>
               </Link>
-              <div className=" flex flex-col text-center pb-[13px] px-[21.54px] gap-[16px]">
+              <div className="flex flex-col gap-[16px] px-[21.54px] pb-[13px] text-center">
                 <div className="flex flex-col gap-[8px] text-start">
                   <Link href={`/location/${region}/${c_centerName}/${id}`}>
-                    <h1 className="text-denim text-[18px] leading-[22.5px] tracking-[-2.5%]">
+                    <h1 className="text-[18px] leading-[22.5px] tracking-[-2.5%] text-denim">
                       {centerTitle}
                     </h1>
                   </Link>
@@ -91,20 +91,20 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
                   </p>
                 </div>
                 <div className="flex flex-col gap-[8px]">
-                  <div className="w-full bg-background-highlight px-[16px] py-[8px] font-light text-[14px]">
-                    <span className="text-terracota font-normal">
+                  <div className="w-full bg-background-highlight px-[16px] py-[8px] text-[14px] font-light">
+                    <span className="font-normal text-terracota">
                       Today&apos;s Hours:
                     </span>{" "}
                     {todayHours}
                   </div>
-                  <div className="flex flex-col gap-[8px] text-[12px] md:justify-start items-center justify-center">
+                  <div className="flex flex-col items-center justify-center gap-[8px] text-[12px] md:justify-start">
                     <Link href={reservatationLink} className="w-full">
-                      <div className="bg-terracota text-white py-[8px] px-[30px] font-bold w-full">
+                      <div className="w-full bg-terracota px-[30px] py-[8px] font-bold text-white">
                         SCHEDULE IN-PERSON VISIT
                       </div>
                     </Link>
                     <Link href={"/virtual-visits"} className="w-full">
-                      <div className="bg-denim text-white py-[8px] px-[30px] font-bold w-full">
+                      <div className="w-full bg-denim px-[30px] py-[8px] font-bold text-white">
                         SCHEDULE VIRTUAL VISIT
                       </div>
                     </Link>

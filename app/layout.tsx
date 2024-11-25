@@ -17,7 +17,7 @@ const lato = localFont({
     { path: "./fonts/Lato-ExtraBold.ttf", weight: "800", style: "normal" },
     { path: "./fonts/Lato-Black.ttf", weight: "900", style: "normal" },
   ],
-  variable: "--font-lato", 
+  variable: "--font-lato",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} antialiased flex flex-col min-h-screen`}
+        className={`${lato.variable} flex min-h-screen flex-col antialiased`}
       >
         <Header />
         <main className="flex-grow">{children}</main>

@@ -82,7 +82,7 @@ export default function ContactUsForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormValues((prevState) => ({
@@ -104,13 +104,10 @@ export default function ContactUsForm() {
   };
   return (
     <>
-      <div
-        className="md:max-h-[946px] bg-cream py-8 px-4 md:px-[70px] md:pt-[67px] md:pb-[78px] 
-      flex flex-col justify-center items-center"
-      >
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex flex-col gap-3 mb-8 md:mb-[38px]">
-            <h1 className="font-lato text-center text-[32px] md:text-5xl font-normal leading-normal text-denim md:max-w-[1296px] w-auto">
+      <div className="flex flex-col items-center justify-center bg-cream px-4 py-8 md:max-h-[946px] md:px-[70px] md:pb-[78px] md:pt-[67px]">
+        <div className="flex flex-col items-center justify-center">
+          <div className="mb-8 flex flex-col gap-3 md:mb-[38px]">
+            <h1 className="font-lato w-auto text-center text-[32px] font-normal leading-normal text-denim md:max-w-[1296px] md:text-5xl">
               how can we help you?
             </h1>
             <span className="font-lato text-center text-lg font-normal leading-normal text-primary">
@@ -118,16 +115,16 @@ export default function ContactUsForm() {
               Submit your inquiry below and we&apos;ll be sure that your
               question gets routed to the appropriate person.
             </span>
-            <div className="pb-[35px] border-b border-beige md:pb-[31px]"></div>
-            <h2 className="font-lato text-center text-lg md:text-[21px] font-normal leading-normal text-denim md:max-w-[1296px] w-auto">
+            <div className="border-b border-beige pb-[35px] md:pb-[31px]"></div>
+            <h2 className="font-lato w-auto text-center text-lg font-normal leading-normal text-denim md:max-w-[1296px] md:text-[21px]">
               Please enter your contact information and inquiry below.
             </h2>
-            <span className="font-lato text-center text-base md:text-lg font-normal leading-normal text-primary">
+            <span className="font-lato text-center text-base font-normal leading-normal text-primary md:text-lg">
               *Required fields
             </span>
           </div>
-          <form className="w-full h-auto flex flex-col md:flex-row gap-5 justify-center items-stretch">
-            <div className="w-full flex flex-col gap-4 firstCol">
+          <form className="flex h-auto w-full flex-col items-stretch justify-center gap-5 md:flex-row">
+            <div className="firstCol flex w-full flex-col gap-4">
               <InputBox
                 label="Reason for Inquiry*"
                 type="select"
@@ -136,7 +133,7 @@ export default function ContactUsForm() {
                 error={errors.select}
               />
 
-              <div className="w-full flex flex-col md:flex-row  gap-5">
+              <div className="flex w-full flex-col gap-5 md:flex-row">
                 <InputBox
                   label="Full name"
                   type="text"
@@ -161,7 +158,7 @@ export default function ContactUsForm() {
                 error={errors.email}
               />
             </div>
-            <div className="w-full flex flex-col gap-4 secondCol">
+            <div className="secondCol flex w-full flex-col gap-4">
               <InputBox
                 label="Message"
                 type="textArea"
@@ -172,7 +169,7 @@ export default function ContactUsForm() {
             </div>
           </form>
           {hasError && (
-            <span className="font-lato text-start text-base md:text-lg font-normal leading-normal text-error my-[38px]">
+            <span className="font-lato my-[38px] text-start text-base font-normal leading-normal text-error md:text-lg">
               Please correct the errors and submit again.
             </span>
           )}
@@ -181,13 +178,12 @@ export default function ContactUsForm() {
             type="submit"
             className={`${
               hasError ? "mt-0" : "mt-6"
-            } md:mt-10 uppercase w-auto py-[14px] px-7 border bg-cream text-terracota border-terracota hover:bg-terracota 
-             hover:text-white font-lato text-center text-[21px] font-bold mb-[43px] md:mb-[78px]`}
+            } font-lato mb-[43px] w-auto border border-terracota bg-cream px-7 py-[14px] text-center text-[21px] font-bold uppercase text-terracota hover:bg-terracota hover:text-white md:mb-[78px] md:mt-10`}
           >
             send us your questions
           </button>
           <h3
-            className="text-lg font-inter pt-[35px] md:pt-[55px] border-t border-beige"
+            className="font-inter border-t border-beige pt-[35px] text-lg md:pt-[55px]"
             style={{ fontStyle: "italic", color: "#616161" }}
           >
             <strong>*Emergency Service Notice: &nbsp;</strong>

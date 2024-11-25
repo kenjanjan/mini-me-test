@@ -8,8 +8,8 @@ const Navigation = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "h-[94px] flex w-full justify-between mx-auto items-center px-[70px]",
-        className
+        "mx-auto flex h-[94px] w-full items-center justify-between px-[70px]",
+        className,
       )}
     >
       <Link href="/">

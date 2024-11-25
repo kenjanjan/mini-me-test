@@ -4,7 +4,7 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
-    <header className="border-b-2 w-full z-[9999] bg-white border-b-background-dark sticky top-0">
+    <header className="sticky top-0 z-[9999] w-full border-b-2 border-b-background-dark bg-white">
       <Navigation className="hidden md:flex" />
       <MobileNav className="md:hidden" />
     </header>

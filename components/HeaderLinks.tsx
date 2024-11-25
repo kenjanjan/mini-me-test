@@ -5,12 +5,12 @@ import Link from "next/link";
 const HeaderLinks = ({ variant }: { variant?: string }) => {
   return (
     <div
-      className={cn("flex text-denim gap-[36px] z-50", {
+      className={cn("z-50 flex gap-[36px] text-denim", {
         "flex-col": variant === "mobile",
       })}
     >
       <Link href={"https://27404-1.portal.athenahealth.com/"}>
-        <p className="font-bold hover:brightness-75 items-center flex gap-2">
+        <p className="flex items-center gap-2 font-bold hover:brightness-75">
           Patient Portal{" "}
           <Image
             src={"/assets/external-link.png"}
@@ -26,7 +26,7 @@ const HeaderLinks = ({ variant }: { variant?: string }) => {
           "https://payment.patient.athenahealth.com/statement/?src=statement "
         }
       >
-        <p className="font-bold hover:brightness-75 flex items-center gap-2">
+        <p className="flex items-center gap-2 font-bold hover:brightness-75">
           Pay My Bill
           <Image
             src={"/assets/external-link.png"}

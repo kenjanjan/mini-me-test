@@ -6,7 +6,7 @@ const FooterLinks = () => {
   return (
     <div
       className={cn(
-        "flex flex-col bg-footer-nav md:flex-row px-[24px] md:px-[70px] py-[32px] text-denim gap-[36px] z-50"
+        "z-50 flex flex-col gap-[36px] bg-footer-nav px-[24px] py-[32px] text-denim md:flex-row md:px-[70px]",
       )}
     >
       <div className="flex gap-[24px]">
@@ -18,14 +18,14 @@ const FooterLinks = () => {
             height={29}
           />
         </div>
-        <div className="flex flex-col md:flex-row gap-[24px]">
+        <div className="flex flex-col gap-[24px] md:flex-row">
           <Link href={"/location"}>
-            <p className="font-bold hover:brightness-75 items-center flex gap-2">
+            <p className="flex items-center gap-2 font-bold hover:brightness-75">
               Find A Center
             </p>
           </Link>
           <Link href={"/contact-us"}>
-            <p className="font-bold hover:brightness-75 items-center flex gap-2">
+            <p className="flex items-center gap-2 font-bold hover:brightness-75">
               Contact Us
             </p>
           </Link>
@@ -34,7 +34,7 @@ const FooterLinks = () => {
               "https://payment.patient.athenahealth.com/statement/?src=statement "
             }
           >
-            <p className="font-bold hover:brightness-75 flex items-center gap-2">
+            <p className="flex items-center gap-2 font-bold hover:brightness-75">
               Pay My Bill
               <Image
                 src={"/assets/external-link.png"}

@@ -2,9 +2,9 @@ import Accordion, { AccordionProvider } from "./Accordion";
 
 const ServicesSection = () => {
   return (
-    <div className="py-[48px] px-[16px] md:px-[180px] bg-denim text-white text-center flex flex-col gap-[36px]">
+    <div className="flex flex-col gap-[36px] bg-denim px-[16px] py-[48px] text-center text-white md:px-[180px]">
       <div className="flex flex-col gap-3">
-        <p className="font-normal text-[32px] md:text-[36px] leading-[38.4px] md:leading-[43.2px]">
+        <p className="text-[32px] font-normal leading-[38.4px] md:text-[36px] md:leading-[43.2px]">
           services and treatment
         </p>
         <p>
@@ -15,8 +15,8 @@ const ServicesSection = () => {
       <div>
         <AccordionProvider variant="exclusive">
           <Accordion icon="illness" id="illness" title="Illness">
-            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
-              <ul className="text-start space-y-[12px] w-max text-[18px]">
+            <div className="grid grid-cols-2 gap-[32px] px-[230px] py-[32px]">
+              <ul className="w-max space-y-[12px] text-start text-[18px]">
                 <li>Allergies</li>
                 <li>COVID-19</li>
                 <li>Flu</li>
@@ -26,7 +26,7 @@ const ServicesSection = () => {
                 <li>Mono treatment</li>
                 <li>Strep throat</li>
               </ul>
-              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+              <ul className="w-max space-y-[12px] justify-self-end text-start text-[18px]">
                 <li>Colds</li>
                 <li>Ear infections</li>
                 <li>Gastrointestinal illnesses</li>
@@ -39,8 +39,8 @@ const ServicesSection = () => {
             </div>
           </Accordion>
           <Accordion icon="injury" id="injury" title="Injury">
-            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
-              <ul className="text-start space-y-[12px] w-max text-[18px]">
+            <div className="grid grid-cols-2 gap-[32px] px-[230px] py-[32px]">
+              <ul className="w-max space-y-[12px] text-start text-[18px]">
                 <li>Bites and Stings</li>
                 <li>Broken Bones</li>
                 <li>Burns</li>
@@ -53,7 +53,7 @@ const ServicesSection = () => {
                 <li>Strains and Sprains</li>
                 <li>X-rays</li>
               </ul>
-              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+              <ul className="w-max space-y-[12px] justify-self-end text-start text-[18px]">
                 <li>Bites and Stings</li>
                 <li>Broken Bones</li>
                 <li>Burns</li>
@@ -76,8 +76,8 @@ const ServicesSection = () => {
             id="wellness"
             title="Wellness and Prevention"
           >
-            <div className="grid grid-cols-2 px-[230px] py-[32px] gap-[32px]">
-              <ul className="text-start space-y-[12px] w-max text-[18px]">
+            <div className="grid grid-cols-2 gap-[32px] px-[230px] py-[32px]">
+              <ul className="w-max space-y-[12px] text-start text-[18px]">
                 <li>Camp, School, and Sports Physicals</li>
                 <li>Earwax Removal</li>
                 <li>Flu Shots</li>
@@ -86,7 +86,7 @@ const ServicesSection = () => {
                 <li>Vaccinations</li>
                 <li>Women&apos;s Health</li> {/* Escaped apostrophe here */}
               </ul>
-              <ul className="text-start space-y-[12px] w-max text-[18px] justify-self-end">
+              <ul className="w-max space-y-[12px] justify-self-end text-start text-[18px]">
                 <li>Camp, School, and Sports Physicals</li>
                 <li>Earwax Removal</li>
                 <li>Flu Shots</li>

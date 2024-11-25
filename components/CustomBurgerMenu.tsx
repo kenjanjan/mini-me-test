@@ -6,21 +6,17 @@ const CustomBurgerMenu = () => {
     <>
       <div
         className={cn(
-          "absolute top-7 transition-all duration-300 peer-checked:rotate-45 peer-checked:top-[38.5px]"
+          "absolute top-7 transition-all duration-300 peer-checked:top-[38.5px] peer-checked:rotate-45",
         )}
       >
         <Image src={"/assets/line.svg"} width={40} height={4} alt="line-1" />
       </div>
-      <div
-        className={cn(
-          "transition-all duration-300 peer-checked:rotate-45"
-        )}
-      >
+      <div className={cn("transition-all duration-300 peer-checked:rotate-45")}>
         <Image src={"/assets/line.svg"} width={40} height={4} alt="line-2" />
       </div>
       <div
         className={cn(
-          "absolute bottom-7 transition-all duration-300 peer-checked:-rotate-45 peer-checked:bottom-[37px]"
+          "absolute bottom-7 transition-all duration-300 peer-checked:bottom-[37px] peer-checked:-rotate-45",
         )}
       >
         <Image src={"/assets/line.svg"} width={40} height={4} alt="line-3" />

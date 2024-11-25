@@ -4,34 +4,34 @@ import Button from "./Button";
 
 const LinkSection = () => {
   return (
-    <div className="px-[16px] relative md:px-[100px] w-full flex flex-col justify-center items-center bg-background-light py-[48px]">
-      <div className="gap-0.5 text-denim flex flex-col items-center justify-center text-center">
+    <div className="relative flex w-full flex-col items-center justify-center bg-background-light px-[16px] py-[48px] md:px-[100px]">
+      <div className="flex flex-col items-center justify-center gap-0.5 text-center text-denim">
         <h2>now there are more ways</h2>
         <h3 className="text-terracota">to access care at MedExpress</h3>
       </div>
-      <div className="flex flex-col md:flex-row justify-between mx-auto w-full">
-        <div className="flex flex-col items-center -mt-16 text-denim text-center">
+      <div className="mx-auto flex w-full flex-col justify-between md:flex-row">
+        <div className="-mt-16 flex flex-col items-center text-center text-denim">
           <Image
             src={"/assets/center-icon.svg"}
             alt="center-icon"
             width={244}
             height={293}
-            className="w-[170px] h-[205px] md:h-[293px] md:w-[244px]"
+            className="h-[205px] w-[170px] md:h-[293px] md:w-[244px]"
           />
-          <p className="md:hidden font-normal text-[28px] leading-[33.6px] mb-[28px]">
+          <p className="mb-[28px] text-[28px] font-normal leading-[33.6px] md:hidden">
             IN PERSON
           </p>
-          <div className="flex flex-col items-center justify-center gap-[6px] md:gap-[16px] md:mt-[25px] md:w-3/4">
+          <div className="flex flex-col items-center justify-center gap-[6px] md:mt-[25px] md:w-3/4 md:gap-[16px]">
             <h4>Visit a Center</h4>
             <p className="mb-[16px]">
-              Your neighborhood medical center is here to care for your family&apos;s
-              illnesses and injuries.
+              Your neighborhood medical center is here to care for your
+              family&apos;s illnesses and injuries.
             </p>
             <Button name="FIND A CENTER" />
           </div>
         </div>
-        <div className="md:absolute pt-[53px] flex gap-[22px] text-denim items-center justify-center md:left-1/2  md:-translate-x-1/2 md:ml-[38px]">
-          <p className="md:block hidden font-normal text-[28px] leading-[33.6px]">
+        <div className="flex items-center justify-center gap-[22px] pt-[53px] text-denim md:absolute md:left-1/2 md:ml-[38px] md:-translate-x-1/2">
+          <p className="hidden text-[28px] font-normal leading-[33.6px] md:block">
             IN PERSON
           </p>
           <Image
@@ -39,24 +39,24 @@ const LinkSection = () => {
             alt="cross-icon"
             width={222}
             height={199}
-            className="md:w-[222px] md:h-[199px] w-[167px] h-[150px]"
+            className="h-[150px] w-[167px] md:h-[199px] md:w-[222px]"
           />
-          <p className="md:block hidden font-normal text-[28px] leading-[33.6px]">
+          <p className="hidden text-[28px] font-normal leading-[33.6px] md:block">
             VIRTUAL VISITS
           </p>
         </div>
-        <div className="flex flex-col items-center  -mt-5 md:-mt-[30px] text-denim text-center">
+        <div className="-mt-5 flex flex-col items-center text-center text-denim md:-mt-[30px]">
           <Image
             src={"/assets/phone-icon.svg"}
             alt="phone-icon"
             width={217}
             height={261}
-            className="md:w-[217px] md:h-[261px] w-[157px] h-[190px]"
+            className="h-[190px] w-[157px] md:h-[261px] md:w-[217px]"
           />
-          <p className="md:hidden font-normal text-[28px] leading-[33.6px] mb-[28px] mt-[22px]">
+          <p className="mb-[28px] mt-[22px] text-[28px] font-normal leading-[33.6px] md:hidden">
             VIRTUAL VISITS
           </p>
-          <div className="flex flex-col items-center justify-center gap-[6px] md:gap-[16px] md:mt-[25px] md:w-3/4">
+          <div className="flex flex-col items-center justify-center gap-[6px] md:mt-[25px] md:w-3/4 md:gap-[16px]">
             <h4>Video Chat with a Provider</h4>
             <p className="mb-[16px]">
               Available for urgent care or medical evaluations for every day

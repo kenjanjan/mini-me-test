@@ -5,7 +5,7 @@ const BillingQuestions = () => {
     <div>
       {/* Hero section */}
       <div
-        className={`bg-ME-bgLightBlue relative flex flex-col min-h-[375px]  items-start justify-center md:min-h-[450px]`}
+        className={`bg-ME-bgLightBlue relative flex min-h-[375px] flex-col items-start justify-center md:min-h-[450px]`}
         style={{
           backgroundImage: `url(/assets/images/woman-smiling.png)`,
           backgroundRepeat: "no-repeat",
@@ -16,10 +16,10 @@ const BillingQuestions = () => {
         }}
       >
         <div
-          className={`flex flex-col gap-3 pr-[100px] pl-[25px]  md:pl-[70px] md:gap-6 mt-0`}
+          className={`mt-0 flex flex-col gap-3 pl-[25px] pr-[100px] md:gap-6 md:pl-[70px]`}
         >
           <span
-            className={`font-lato leading-[42px] md:text-[64px] md:leading-[84px] text-white text-[32px] font-bold md:w-full `}
+            className={`font-lato text-[32px] font-bold leading-[42px] text-white md:w-full md:text-[64px] md:leading-[84px]`}
           >
             Understanding billing and payment
           </span>
@@ -27,9 +27,9 @@ const BillingQuestions = () => {
       </div>
 
       {/* Main contents */}
-      <div className="flex flex-col min-h-screen items-center w-full md:py-[45px] md:px-0 py-6 px-4">
-        <div className="flex flex-col max-w-[860px] ">
-          <span className="font-lato text-primary text-lg font-normal leading-6 ">
+      <div className="flex min-h-screen w-full flex-col items-center px-4 py-6 md:px-0 md:py-[45px]">
+        <div className="flex max-w-[860px] flex-col">
+          <span className="font-lato text-lg font-normal leading-6 text-primary">
             Today and every day, MedExpress is dedicated to making the billing
             process as easy and convenient as possible. We have a team of
             dedicated payment experience representatives who are happy to help
@@ -41,10 +41,10 @@ const BillingQuestions = () => {
             <br />
             <br />
           </span>
-          <h2 className="font-lato text-denim text-2xl font-bold leading-6 text-start">
+          <h2 className="font-lato text-start text-2xl font-bold leading-6 text-denim">
             Direct Billing to Insurance Providers <br />
           </h2>
-          <span className="font-lato text-primary text-lg font-normal leading-6 max-w-[860px] ">
+          <span className="font-lato max-w-[860px] text-lg font-normal leading-6 text-primary">
             On your behalf and for your convenience, MedExpress will verify your
             coverage either before or during your visit and bill your insurance
             company directly for the services we provide. Once we’ve heard back
@@ -70,10 +70,10 @@ const BillingQuestions = () => {
             <br />
             <br />
           </span>
-          <h2 className="font-lato text-denim text-2xl font-bold leading-6 text-start">
+          <h2 className="font-lato text-start text-2xl font-bold leading-6 text-denim">
             Online Bill Payment <br />
           </h2>
-          <span className="font-lato text-primary text-lg font-normal leading-6 max-w-[860px] ">
+          <span className="font-lato max-w-[860px] text-lg font-normal leading-6 text-primary">
             The care and convenience of MedExpress doesn’t stop when you walk
             out our doors. It can continue at home through the option to pay
             your bill through our &nbsp;
@@ -92,7 +92,7 @@ const BillingQuestions = () => {
             <br />
             <br />
             With our online bill pay portal, you’ll be able to:
-            <ul className="list-disc ml-5">
+            <ul className="ml-5 list-disc">
               <li>View your billing statement and balance.</li>
               <li>Make secure credit card payments.</li>
               <li>Send messages and billing inquiries.</li>
@@ -100,11 +100,11 @@ const BillingQuestions = () => {
             <br />
             <br />
           </span>
-          <h2 className="font-lato text-denim text-2xl font-bold leading-6 text-start">
+          <h2 className="font-lato text-start text-2xl font-bold leading-6 text-denim">
             Understanding Your Insurance Plan <br />
           </h2>
 
-          <span className="font-lato text-primary text-lg font-normal leading-6 max-w-[860px] ">
+          <span className="font-lato max-w-[860px] text-lg font-normal leading-6 text-primary">
             The majority of insurance plans require that you make a co-payment
             at the time you received medical services. Typically, besides your
             co-payment, you may be responsible for any unpaid amount not

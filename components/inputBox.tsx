@@ -8,7 +8,7 @@ interface InputBoxProps {
   onChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => void;
   error?: string;
 }
@@ -21,8 +21,8 @@ export default function InputBox({
   error,
 }: InputBoxProps) {
   return (
-    <div className="w-full h-full flex flex-col inputBox">
-      <label className="font-lato text-start text-base md:text-lg font-bold leading-normal text-secondary">
+    <div className="inputBox flex h-full w-full flex-col">
+      <label className="font-lato text-start text-base font-bold leading-normal text-secondary md:text-lg">
         {label || "Reason for inquiry*"}
       </label>
       {type === "text" && (
@@ -67,13 +67,13 @@ export default function InputBox({
       {type === "textArea" && (
         <textarea
           name="message"
-          className="p-5 h-[236px] md:h-full focus:outline-none focus:ring-1 focus:ring-terracota"
+          className="h-[236px] p-5 focus:outline-none focus:ring-1 focus:ring-terracota md:h-full"
           value={value}
           onChange={onChange}
         ></textarea>
       )}
       {error && (
-        <span className="font-lato text-start text-base md:text-lg font-normal leading-normal text-error">
+        <span className="font-lato text-start text-base font-normal leading-normal text-error md:text-lg">
           {error}
         </span>
       )}

@@ -11,7 +11,7 @@ import { notFound, useParams } from "next/navigation";
 async function fetchCenterData(
   region: string,
   center_name: string,
-  id: string
+  id: string,
 ) {
   const decodedCenterName = decodeURIComponent(center_name);
 
@@ -21,7 +21,7 @@ async function fetchCenterData(
     }) =>
       result.data.isoRegionCode === region &&
       result.data.c_centerName === decodedCenterName &&
-      result.data.id === id
+      result.data.id === id,
   );
 
   return centerData.length > 0 ? centerData[0] : null;
@@ -29,7 +29,7 @@ async function fetchCenterData(
 
 const CenterBody = () => {
   const { region, center_name, id } = useParams();
-  //TODO: Fix any type  
+  //TODO: Fix any type
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [centerData, setCenterData] = useState<any | null>(null);
   const [coordinates, setCoordinates] = useState<{
@@ -82,13 +82,13 @@ const CenterBody = () => {
       <>
         <Suspense
           fallback={
-            <div className="h-[400px] bg-gray-200 w-full">Loading map...</div>
+            <div className="h-[400px] w-full bg-gray-200">Loading map...</div>
           }
         >
           <MapComponent
             latitude={coordinates.latitude}
             longitude={coordinates.longitude}
-            className="md:block hidden z-1"
+            className="z-1 hidden md:block"
           />
         </Suspense>
         <CenterDetailsSection
@@ -96,7 +96,7 @@ const CenterBody = () => {
           coordinates={coordinates}
         />
         <div className="bg-denim px-[16px] py-[32px] text-white">
-          <div className="flex flex-col gap-[12px] items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-center gap-[12px] text-center">
             <h3>MedExpress or Emergency Room?</h3>
             <p className="md:w-1/2">
               Most MedExpress visits cost under 10% of the average emergency

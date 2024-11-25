@@ -17,7 +17,7 @@ const MapComponent = ({
       center={[latitude, longitude]}
       zoom={13}
       style={{ height: "400px", width: "100%" }}
-      className={cn(className, "z-0 relative")}
+      className={cn(className, "relative z-0")}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

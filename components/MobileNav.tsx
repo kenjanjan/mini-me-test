@@ -8,19 +8,19 @@ const MobileNav = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "h-[80px] flex w-full justify-between mx-auto items-center px-[16px]",
-        className
+        "mx-auto flex h-[80px] w-full items-center justify-between px-[16px]",
+        className,
       )}
     >
       <label
         htmlFor="mobile-nav-toggle"
-        className="h-full flex flex-col items-center justify-center cursor-pointer"
+        className="flex h-full cursor-pointer flex-col items-center justify-center"
       >
         <input type="checkbox" id="mobile-nav-toggle" className="peer hidden" />
 
         <CustomBurgerMenu />
 
-        <div className="absolute right-0 border-b border-b-[#c9c9c9] bg-white w-full mt-[277.5px] px-[25px] py-8 transition-transform duration-300 transform scale-y-0 origin-top peer-checked:scale-y-100">
+        <div className="absolute right-0 mt-[277.5px] w-full origin-top scale-y-0 transform border-b border-b-[#c9c9c9] bg-white px-[25px] py-8 transition-transform duration-300 peer-checked:scale-y-100">
           <HeaderLinks variant="mobile" />
         </div>
       </label>
