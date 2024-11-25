@@ -81,7 +81,7 @@ const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
               </Link>
               <div className=" flex flex-col text-center pb-[13px] px-[21.54px] gap-[16px]">
                 <div className="flex flex-col gap-[8px] text-start">
-                  <Link href={`/location/${region}/center_name/${id}`}>
+                  <Link href={`/location/${region}/${c_centerName}/${id}`}>
                     <h1 className="text-denim text-[18px] leading-[22.5px] tracking-[-2.5%]">
                       {centerTitle}
                     </h1>
