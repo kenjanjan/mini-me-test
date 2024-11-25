@@ -24,7 +24,7 @@ export default function NotFound() {
           Return Home
         </Link>
         <Link
-          href={"/find-a-center"}
+          href={"/location"}
           className="w-auto border border-terracota bg-white py-[14px] 
   px-7 text-lg md:text-[21px] font-lato text-terracota font-bold hover:bg-terracota hover:text-white flex 
   items-center justify-center  text-center uppercase max-h-[50px]"
