@@ -110,7 +110,13 @@ const CenterDetailsSection = ({ centerDetails }: CenterDetailsSectionProps) => {
           </div>
 
           <div className="mt-[14px] flex flex-col md:flex-row gap-[30px]">
-            <p>{centerDetails.mainPhone}</p>
+            <a
+              href={`tel:${centerDetails.mainPhone}`}
+              className="cursor-pointer"
+              aria-label={`Call ${centerDetails.mainPhone}`}
+            >
+              {centerDetails.mainPhone}
+            </a>
             <p>Get Directions</p>
             <p className="md:hidden">View in Map</p>
           </div>
