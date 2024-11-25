@@ -4,7 +4,7 @@ interface InputBoxProps {
   label: string;
   type: string;
   value: string;
-  name: string;
+  name?: string;
   onChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement

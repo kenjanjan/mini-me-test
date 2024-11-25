@@ -115,8 +115,8 @@ export default function ContactUsForm() {
             </h1>
             <span className="font-lato text-center text-lg font-normal leading-normal text-primary">
               Do you have a general question for a MedExpress team member?
-              Submit your inquiry below and we'll be sure that your question
-              gets routed to the appropriate person.
+              Submit your inquiry below and we&apos;ll be sure that your
+              question gets routed to the appropriate person.
             </span>
             <div className="pb-[35px] border-b border-beige md:pb-[31px]"></div>
             <h2 className="font-lato text-center text-lg md:text-[21px] font-normal leading-normal text-denim md:max-w-[1296px] w-auto">
