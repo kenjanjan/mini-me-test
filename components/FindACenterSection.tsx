@@ -8,7 +8,7 @@ const FindACenterSection = () => {
       <h2 className="text-denim text-center">choose your state to find a center</h2>
       <div className="flex md:flex-row flex-col justify-between gap-[20px]">
         {state.map((state, index) => (
-          <Link href={`/region/${state}`} key={index} className="flex bg-white border border-[#DCDCDC] flex-col gap-[10px] items-center">
+          <Link href={`/location/${state}`} key={index} className="flex bg-white border border-[#DCDCDC] flex-col gap-[10px] items-center">
             <Image
               src={`/assets/images/${state}-cover.png`}
               width={420}

@@ -14,7 +14,7 @@ const AverageWaitSection = () => {
       </div>
       <div className="flex flex-col md:flex-row md:gap-[24px] w-full items-center justify-between gap-[36px]">
         <div className="flex flex-col gap-8 md:gap-2 w-full">
-          <h2 className="text-[64px] leading-[76.8px]">{"&lt;60"}</h2>
+          <h2 className="text-[64px] leading-[76.8px]">{"<60"}</h2>
           <h2 className="text-[21px] leading-[25.2px]">Minute Wait Time</h2>
           <p>Most patients are in and out in less than an hour.</p>
         </div>

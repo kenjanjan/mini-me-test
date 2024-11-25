@@ -21,7 +21,11 @@ const HeaderLinks = ({ variant }: { variant?: string }) => {
           />
         </p>
       </Link>
-      <Link href={"https://payment.patient.athenahealth.com/statement/?src=statement "}>
+      <Link
+        href={
+          "https://payment.patient.athenahealth.com/statement/?src=statement "
+        }
+      >
         <p className="font-bold hover:brightness-75 flex items-center gap-2">
           Pay My Bill
           <Image
@@ -33,7 +37,7 @@ const HeaderLinks = ({ variant }: { variant?: string }) => {
           />
         </p>
       </Link>
-      <Link href={"/find-a-center"}>
+      <Link href={"/location"}>
         <p className="font-bold hover:brightness-75">Find A Center</p>
       </Link>
     </div>

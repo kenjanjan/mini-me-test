@@ -5,7 +5,7 @@ import QuoteSection from "@/components/QuoteSection";
 import ServicesSection from "@/components/ServicesSection";
 import Image from "next/image";
 
-const FindACenter = () => {
+const Location = () => {
   return (
     <>
       <HeroSection message={`find a \ncenter`} image="find-a-center-hero" variant="hidden"/>
@@ -24,4 +24,4 @@ const FindACenter = () => {
   );
 };
 
-export default FindACenter;
+export default Location;

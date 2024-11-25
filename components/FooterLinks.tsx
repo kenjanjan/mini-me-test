@@ -19,7 +19,7 @@ const FooterLinks = () => {
           />
         </div>
         <div className="flex flex-col md:flex-row gap-[24px]">
-          <Link href={"/find-a-center"}>
+          <Link href={"/location"}>
             <p className="font-bold hover:brightness-75 items-center flex gap-2">
               Find A Center
             </p>
@@ -45,7 +45,7 @@ const FooterLinks = () => {
               />
             </p>
           </Link>
-          <Link href={"/billing-questions"}>
+          <Link href={"/billing-information"}>
             <p className="font-bold hover:brightness-75">Billing Question</p>
           </Link>
         </div>

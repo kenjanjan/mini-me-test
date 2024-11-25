@@ -10,7 +10,7 @@ import BottomSection from "@/components/BottomSection";
 import { useParams } from "next/navigation";
 
 const CenterBody = () => {
-  const { slug } = useParams();
+  const { id } = useParams();
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
@@ -24,14 +24,14 @@ const CenterBody = () => {
   const [listOfServices, setListOfServices] = useState<string[]>([]);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!id) return;
 
     const matchingData = data.response.results.filter(
-      (result) => result.data.id === slug
+      (result) => result.data.id === id
     );
 
     if (matchingData.length === 0) {
-      setError(`No data found for slug: ${slug}`);
+      setError(`No data found for id: ${id}`);
       return;
     }
 
@@ -41,13 +41,13 @@ const CenterBody = () => {
     const longitude = matchingData[0].data.geocodedCoordinate?.longitude;
 
     if (!latitude || !longitude) {
-      setError(`Coordinates not found for slug: ${slug}`);
+      setError(`Coordinates not found for id: ${id}`);
       return;
     }
     setListOfInsurance(matchingData[0].data.insuranceAccepted);
     setListOfServices(matchingData[0].data.services);
     setCoordinates({ latitude, longitude });
-  }, [slug]);
+  }, [id]);
 
   if (error) {
     return <NotFound />;
