@@ -13,14 +13,17 @@ async function fetchCenterData(
   center_name: string,
   id: string
 ) {
+  const decodedCenterName = decodeURIComponent(center_name);
+
   const centerData = data.response.results.filter(
     (result: {
       data: { isoRegionCode: string; c_centerName: string; id: string };
     }) =>
       result.data.isoRegionCode === region &&
-      result.data.c_centerName === center_name &&
+      result.data.c_centerName === decodedCenterName &&
       result.data.id === id
   );
+
   return centerData.length > 0 ? centerData[0] : null;
 }
 
