@@ -15,7 +15,7 @@ const HeroSection = ({ message, image, variant }: HeroSectionProps) => {
   return (
     <div className="w-full relative overflow-hidden bg-light-blue h-[232px] md:h-[450px] flex flex-col justify-center items-start">
       {/* Content container */}
-      <div className="relative z-10 flex flex-col w-full wrapper mx-auto px-[25px] md:px-[70px] md:pr-[25%] pr-[25%] md:gap-[24px] gap-3 md:justify-start md:items-start h-full pt-[22px] md:pt-[63px]">
+      <div className="relative z-10 flex flex-col w-3/4 md:w-1/2 px-[25px] md:px-[70px] md:gap-[24px] gap-3 md:justify-start md:items-start h-full pt-[22px] md:pt-[63px]">
         {messageLines.map((line, index) => (
           <h1 key={index} className="text-denim">
             {line}
