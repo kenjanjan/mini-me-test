@@ -67,7 +67,7 @@ const CenterBody = () => {
             className="md:block hidden z-1"
           />
         </Suspense>
-        <CenterDetailsSection centerDetails={centerDetails} />
+        <CenterDetailsSection centerDetails={centerDetails} coordinates={coordinates}/>
         <div className="bg-denim px-[16px] py-[32px] text-white">
           <div className="flex flex-col gap-[12px] items-center justify-center text-center">
             <h3>MedExpress or Emergency Room?</h3>

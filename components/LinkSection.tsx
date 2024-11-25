@@ -23,7 +23,7 @@ const LinkSection = () => {
           </p>
           <div className="flex flex-col items-center justify-center gap-[6px] md:gap-[16px] md:mt-[25px] md:w-3/4">
             <h4>Visit a Center</h4>
-            <p className="mb-[10px]">
+            <p className="mb-[16px]">
               Your neighborhood medical center is here to care for your family&apos;s
               illnesses and injuries.
             </p>
@@ -58,7 +58,7 @@ const LinkSection = () => {
           </p>
           <div className="flex flex-col items-center justify-center gap-[6px] md:gap-[16px] md:mt-[25px] md:w-3/4">
             <h4>Video Chat with a Provider</h4>
-            <p className="mb-[10px]">
+            <p className="mb-[16px]">
               Available for urgent care or medical evaluations for every day
               illnesses and injuries.
             </p>
