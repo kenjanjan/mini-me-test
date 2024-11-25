@@ -10,10 +10,10 @@ const FindACenterSection = () => {
         {state.map((state, index) => (
           <Link href={`/location/${state}`} key={index} className="flex bg-white border border-[#DCDCDC] flex-col gap-[10px] items-center">
             <Image
-              src={`/assets/images/${state}-cover.png`}
+              src={`/assets/images/${state}.png`}
               width={420}
               height={157}
-              alt={`${state}-cover`}
+              alt={`${state}`}
               className=""
             />
             <h3 className="text-[28px] mb-[16px]">
