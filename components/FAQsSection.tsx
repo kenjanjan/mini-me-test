@@ -1,6 +1,5 @@
 import React from "react";
 import Accordion, { AccordionProvider } from "./Accordion";
-import Image from "next/image";
 
 type FAQsSectionProps = {
   listOfInsurance: string[];
