@@ -11,14 +11,14 @@ const stateMap: Record<string, string> = {
 };
 
 const RegionBody = () => {
-  const { slug } = useParams() as { slug: string };
+  const { region } = useParams() as { region: string };
 
-  const state = stateMap[slug] || "Unknown State";
+  const state = stateMap[region] || "Unknown State";
 
   return (
     <>
       <HeroSection
-        message={`Feel better, no appointment needed in ${slug}`}
+        message={`Feel better, no appointment needed in ${region}`}
         image="medex-image"
         variant="hidden"
       />
@@ -29,7 +29,7 @@ const RegionBody = () => {
           {` ${state}`} MedExpress neighborhood medical center.
         </p>
       </div>
-      <VisitACenterSection slug={slug}  state={state}/>
+      <VisitACenterSection region={region}  state={state}/>
     </>
   );
 };

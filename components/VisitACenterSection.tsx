@@ -5,14 +5,14 @@ import Image from "next/image";
 import { formatTo12Hour } from "@/utils/utils";
 
 type VisitACenterSectionProps = {
-  slug: string;
+  region: string;
   state: string;
 };
 
-const VisitACenterSection = ({ slug, state }: VisitACenterSectionProps) => {
+const VisitACenterSection = ({ region, state }: VisitACenterSectionProps) => {
   const stateData = data.response.results.filter(
     (result: { data: { isoRegionCode: string } }) =>
-      result.data.isoRegionCode === slug
+      result.data.isoRegionCode === region
   );
 
   return (
@@ -68,7 +68,7 @@ const VisitACenterSection = ({ slug, state }: VisitACenterSectionProps) => {
               key={index}
               className="flex flex-col gap-[15px] bg-white w-full max-w-[307px] items-center overflow-hidden"
             >
-              <Link href={`/centers/${id}`}>
+              <Link href={`/location/${region}/${c_centerName}/${id}`}>
                 <div>
                   <Image
                     src={"/assets/images/center-image.png"}
@@ -81,7 +81,7 @@ const VisitACenterSection = ({ slug, state }: VisitACenterSectionProps) => {
               </Link>
               <div className=" flex flex-col text-center pb-[13px] px-[21.54px] gap-[16px]">
                 <div className="flex flex-col gap-[8px] text-start">
-                  <Link href={`/centers/${id}`}>
+                  <Link href={`/location/${region}/center_name/${id}`}>
                     <h1 className="text-denim text-[18px] leading-[22.5px] tracking-[-2.5%]">
                       {centerTitle}
                     </h1>
